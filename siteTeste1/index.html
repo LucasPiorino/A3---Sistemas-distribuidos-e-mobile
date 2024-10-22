@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Animes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/app.js" defer></script>
+    <script src="js/autocomplete.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = "mobile.html";
+          }
+        });
+      </script>
+      
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/patrik2.png" alt="rebirth">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inde">Início</a></li>
+                <li><a href="search.html">Animes</a></li>
+                <li><a href="#">Temporadas</a></li>
+                <li><a href="#">Social</a></li>
+                <li><a href="#">Fórum</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquise animes..." onfocus="showSuggestionsBox()" oninput="autocompleteAnimeSearch()" onblur="hideSuggestionsBox()">
+            <div id="suggestions-box" class="suggestions-box hidden">
+                <p id="placeholder-text">Digite o nome do anime</p>
+            </div>
+        <button onclick="searchAnimeByName()">Pesquisar</button>
+    </header>
+
+    <main>
+        <!-- Temporada Atual -->
+        <section>
+            <h2 class="current-season">Temporada Atual</h2>
+            <div class="carousel-container">
+                <button class="carousel-arrow left" onclick="scrollCarousel('current-season', -1)">&lt;</button>
+                <div class="carousel" id="current-season"></div>
+                <button class="carousel-arrow right" onclick="scrollCarousel('current-season', 1)">&gt;</button>
+            </div>
+        </section>
+    
+        <!-- Lançando Hoje -->
+        <section>
+            <h2 class="launching-today">Lançando Hoje</h2>
+            <div class="carousel-container">
+                <button class="carousel-arrow left" onclick="scrollCarousel('launching-today', -1)">&lt;</button>
+                <div class="carousel" id="launching-today"></div>
+                <button class="carousel-arrow right" onclick="scrollCarousel('launching-today', 1)">&gt;</button>
+            </div>
+        </section>
+    
+        <!-- Lançados Ontem -->
+        <section>
+            <h2 class="launched-yesterday">Lançados Ontem</h2>
+            <div class="carousel-container">
+                <button class="carousel-arrow left" onclick="scrollCarousel('launched-yesterday', -1)">&lt;</button>
+                <div class="carousel" id="launched-yesterday"></div>
+                <button class="carousel-arrow right" onclick="scrollCarousel('launched-yesterday', 1)">&gt;</button>
+            </div>
+        </section>
+    
+        <!-- Lançando Amanhã -->
+        <section>
+            <h2 class="launching-tomorrow">Lançando Amanhã</h2>
+            <div class="carousel-container">
+                <button class="carousel-arrow left" onclick="scrollCarousel('launching-tomorrow', -1)">&lt;</button>
+                <div class="carousel" id="launching-tomorrow"></div>
+                <button class="carousel-arrow right" onclick="scrollCarousel('launching-tomorrow', 1)">&gt;</button>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
+
+<script>
+    function redirectToSearchPage() {
+        const searchInput = document.getElementById('home-search-input').value.trim();
+        if (searchInput) {
+            window.location.href = `search.html?query=${encodeURIComponent(searchInput)}`;
+        } else {
+            window.location.href = `search.html`;
+        }
+    }
+</script>

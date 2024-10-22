@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Animes - Mobile</title>
+    <link rel="stylesheet" href="css/mobile.css">
+    <script type="module" src="js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/patrik2.png" alt="rebirth">
+            </a>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="mobile-search-input" placeholder="Pesquise por Animes" oninput="fetchAnimeSuggestions()" autocomplete="off">
+            <button onclick="redirectToSearchPage()">Pesquisar</button>
+            <div id="autocomplete-suggestions"></div> <!-- Contêiner para as sugestões -->
+        </div>
+    </header>
+
+    <main>
+        <!-- Temporada Atual -->
+        <section class="anime-section">
+            <h2 class="section-title">Temporada Atual</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="current-season"></div>
+            </div>
+        </section>
+
+        <!-- Lançando Hoje -->
+        <section class="anime-section">
+            <h2 class="section-title">Lançando Hoje</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="launching-today"></div>
+            </div>
+        </section>
+
+        <!-- Lançados Ontem -->
+        <section class="anime-section">
+            <h2 class="section-title">Lançados Ontem</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="launched-yesterday"></div>
+            </div>
+        </section>
+
+        <!-- Lançando Amanhã -->
+        <section class="anime-section">
+            <h2 class="section-title">Lançando Amanhã</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="launching-tomorrow"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav class="bottom-nav">
+            <ul>
+                <li><button onclick="redirectToPage('index.html')"><img src="icons/home.png" alt="Início"><span>Início</span></button></li>
+                <li><button onclick="redirectToPage('search.html')"><img src="icons/animes.png" alt="Animes"><span>Animes</span></button></li>
+                <li><button onclick="toggleSearchBar()"><img src="icons/search.png" alt="Pesquisar"><span>Pesquisa</span></button></li>
+                <li><button onclick="redirectToPage('login.html')"><img src="icons/login.png" alt="Login"><span>Login</span></button></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        function redirectToPage(page) {
+            window.location.href = page;
+        }
+
+        function redirectToSearchPage() {
+            const searchInput = document.getElementById('mobile-search-input').value.trim();
+            if (searchInput) {
+                window.location.href = `search.html?query=${encodeURIComponent(searchInput)}`;
+            } else {
+                window.location.href = `search.html`;
+            }
+        }
+
+        function toggleSearchBar() {
+            const searchBar = document.querySelector('.search-bar');
+            searchBar.classList.toggle('visible');
+        }
+    </script>
+</body>
+</html>
