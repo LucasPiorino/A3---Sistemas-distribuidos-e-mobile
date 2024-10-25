@@ -132,7 +132,7 @@ async function fetchAnime(query, variables) {
 // Função para exibir os resultados da pesquisa
 function displayResults(animeList) {
     const resultsContainer = document.getElementById('anime-results-container');
-    resultsContainer.innerHTML = ''; // Limpar resultados anteriores
+    resultsContainer.innerHTML = ''; // Clear previous results
 
     if (!animeList || animeList.length === 0) {
         resultsContainer.innerHTML = '<p>Nenhum anime encontrado.</p>';
@@ -140,16 +140,22 @@ function displayResults(animeList) {
     }
 
     animeList.forEach(anime => {
-        const animeCard = `
-            <div class="anime-card">
-                <img src="${anime.coverImage.large}" alt="${anime.title.romaji}">
-                <div class="anime-info">
-                    <h3>${anime.title.romaji}</h3>
-                    <p>Status: ${anime.status}</p>
-                </div>
+        const animeCard = document.createElement('div');
+        animeCard.classList.add('anime-card');
+        animeCard.innerHTML = `
+            <img src="${anime.coverImage.large}" alt="${anime.title.romaji}">
+            <div class="anime-info">
+                <h3>${anime.title.romaji}</h3>
+                <p>Status: ${anime.status}</p>
             </div>
         `;
-        resultsContainer.innerHTML += animeCard;
+
+        // Add click event listener to redirect to anime-details.html with anime ID
+        animeCard.addEventListener('click', () => {
+            window.location.href = `anime-details.html?id=${anime.id}`;
+        });
+
+        resultsContainer.appendChild(animeCard);
     });
 }
 

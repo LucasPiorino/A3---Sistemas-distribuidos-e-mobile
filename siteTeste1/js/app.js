@@ -1,95 +1,121 @@
-import { fetchAnimeData } from './anilist.js';
+// Arquivo: js/app.js
 
-// Função para renderizar os animes no carrossel
-function renderAnimes(animeList, sectionId) {
-    const section = document.getElementById(sectionId);
-    section.innerHTML = ''; // Limpar a seção
+document.addEventListener("DOMContentLoaded", async () => {
+    const currentSeasonSection = document.getElementById('current-season');
+    const launchingTodaySection = document.getElementById('launching-today');
+    const launchedYesterdaySection = document.getElementById('launched-yesterday');
+    const launchingTomorrowSection = document.getElementById('launching-tomorrow');
 
-    animeList.forEach(anime => {
-        if (anime.nextAiringEpisode && anime.nextAiringEpisode.airingAt) {
-            const currentTime = new Date().getTime() / 1000; // Tempo atual em segundos
-            const airingTime = anime.nextAiringEpisode.airingAt; // Tempo de lançamento do episódio em segundos
+    const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+    const today = new Date().getDay();
+    const yesterday = today === 0 ? 6 : today - 1;
+    const tomorrow = today === 6 ? 0 : today + 1;
 
-            let statusMessage = "";
+    // Função para buscar animes da API
+    async function fetchAnimes(query, variables) {
+        try {
+            const response = await fetch('https://graphql.anilist.co/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query, variables }),
+            });
 
-            // Verificar se o episódio já foi lançado
-            if (currentTime >= airingTime) {
-                statusMessage = "Episódio já lançado";
-            } else {
-                const timeUntilAiring = airingTime - currentTime;
-                const hours = Math.floor(timeUntilAiring / 3600);
-                const minutes = Math.floor((timeUntilAiring % 3600) / 60);
-                statusMessage = `Ep. ${anime.nextAiringEpisode.episode} em ${hours}h ${minutes}m restantes`;
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status}`);
             }
 
-            const animeCard = `
-                <div class="anime-card">
-                    <img src="${anime.coverImage.large}" alt="${anime.title.romaji}">
-                    <div class="anime-info">
-                        <h3>${anime.title.romaji}</h3>
-                        <p>${statusMessage}</p>
-                    </div>
-                </div>
-            `;
-            section.innerHTML += animeCard;
+            const data = await response.json();
+            if (data && data.data && data.data.Page) {
+                return data.data.Page.media;
+            } else {
+                throw new Error("Dados inválidos recebidos da API.");
+            }
+        } catch (error) {
+            console.error("Erro ao buscar animes:", error);
+            return []; // Retorna um array vazio em caso de erro
         }
-    });
-}
+    }
 
-// Função para atualizar os carrosséis
-async function updateCarouselSections() {
-    try {
-        const animeList = await fetchAnimeData();  // Chama a função que busca os dados
-        const launchedYesterday = [];
-        const launchingToday = [];
-        const launchingTomorrow = [];
+    // Função para renderizar animes em um carrossel
+    function renderAnimeCarousel(section, animes) {
+        if (!animes || animes.length === 0) {
+            section.innerHTML = '<p>Nenhum anime encontrado.</p>';
+            return;
+        }
 
-        const today = new Date();
-        const todayDayOfWeek = today.getDay(); // Dia da semana atual (0 = Domingo, 1 = Segunda, etc.)
+        section.innerHTML = animes.map(anime => `
+            <div class="anime-card" onclick="window.location.href='anime-details.html?id=${anime.id}';">
+                <img src="${anime.coverImage.large}" alt="${anime.title.romaji}">
+                <div class="anime-info">
+                    <h3>${anime.title.romaji}</h3>
+                    <p>${anime.nextAiringEpisode ? `Lança: ${weekDays[new Date(anime.nextAiringEpisode.airingAt * 1000).getDay()]}` : 'Sem informações'}</p>
+                </div>
+            </div>
+        `).join('');
+    }
 
-        // Dividir os animes entre ontem, hoje e amanhã com base no dia da semana
-        animeList.forEach(anime => {
-            if (anime.nextAiringEpisode && anime.nextAiringEpisode.airingAt) {
-                const airingDate = new Date(anime.nextAiringEpisode.airingAt * 1000);
-                const airingDayOfWeek = airingDate.getDay(); // Dia da semana do próximo episódio
-
-                // Calcular a diferença de dias da semana
-                let dayDiff = airingDayOfWeek - todayDayOfWeek;
-
-                if (dayDiff === -1 || (todayDayOfWeek === 0 && airingDayOfWeek === 6)) { // Ontem
-                    launchedYesterday.push(anime);
-                } else if (dayDiff === 0) { // Hoje
-                    launchingToday.push(anime);
-                } else if (dayDiff === 1 || (todayDayOfWeek === 6 && airingDayOfWeek === 0)) { // Amanhã
-                    launchingTomorrow.push(anime);
+    // Consulta GraphQL para obter os animes da temporada atual e de acordo com o dia
+    const query = `
+        query ($season: MediaSeason, $year: Int) {
+            Page(perPage: 50) {
+                media(season: $season, seasonYear: $year, format_in: [TV, TV_SHORT], genre_not_in: ["Hentai"], sort: [POPULARITY_DESC]) {
+                    id
+                    title {
+                        romaji
+                    }
+                    coverImage {
+                        large
+                    }
+                    nextAiringEpisode {
+                        airingAt
+                        timeUntilAiring
+                    }
+                    airingSchedule {
+                        nodes {
+                            airingAt
+                        }
+                    }
                 }
             }
-        });
+        }
+    `;
 
-        // Renderizar os animes nas diferentes seções
-        renderAnimes(animeList, 'current-season');
-        renderAnimes(launchedYesterday, 'launched-yesterday');
-        renderAnimes(launchingToday, 'launching-today');
-        renderAnimes(launchingTomorrow, 'launching-tomorrow');
-    } catch (error) {
-        console.error("Erro ao atualizar carrosséis:", error);
+    const seasonYear = new Date().getFullYear();
+    const season = getCurrentSeason();
+    const variables = { season, year: seasonYear };
+
+    // Função para determinar a estação atual
+    function getCurrentSeason() {
+        const month = new Date().getMonth() + 1;
+        if (month >= 1 && month <= 3) return "WINTER";
+        if (month >= 4 && month <= 6) return "SPRING";
+        if (month >= 7 && month <= 9) return "SUMMER";
+        return "FALL";
     }
-}
 
-// Função para rolar o carrossel
-function scrollCarousel(carouselId, direction) {
-    const carousel = document.getElementById(carouselId);
-    const scrollAmount = 300; // Define a quantidade de rolagem para cada clique de seta
+    // Carregar animes e renderizar as seções
+    const animes = await fetchAnimes(query, variables);
 
-    if (direction === 1) {
-        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    } else {
-        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    }
-}
+    // Filtrando e renderizando animes para cada seção
+    renderAnimeCarousel(currentSeasonSection, animes);
 
-// Tornar a função global para ser acessível no HTML
-window.scrollCarousel = scrollCarousel;
+    // Animes lançando hoje
+    const launchingToday = animes.filter(anime => {
+        return anime.nextAiringEpisode && new Date(anime.nextAiringEpisode.airingAt * 1000).getDay() === today;
+    });
+    renderAnimeCarousel(launchingTodaySection, launchingToday);
 
-// Chamar a função quando a página carregar
-window.addEventListener('DOMContentLoaded', updateCarouselSections);
+    // Animes lançados ontem
+    const launchedYesterday = animes.filter(anime => {
+        return anime.nextAiringEpisode && new Date(anime.nextAiringEpisode.airingAt * 1000).getDay() === yesterday;
+    });
+    renderAnimeCarousel(launchedYesterdaySection, launchedYesterday);
+
+    // Animes lançando amanhã
+    const launchingTomorrow = animes.filter(anime => {
+        return anime.nextAiringEpisode && new Date(anime.nextAiringEpisode.airingAt * 1000).getDay() === tomorrow;
+    });
+    renderAnimeCarousel(launchingTomorrowSection, launchingTomorrow);
+});

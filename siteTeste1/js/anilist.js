@@ -22,8 +22,8 @@ export async function fetchAnimeData() {
 
   const variables = {
     page: 1,
-    perPage: 50
-  };
+    perPage: 200
+};
 
   try {
     const response = await fetch('https://graphql.anilist.co', {

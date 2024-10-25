@@ -1,0 +1,165 @@
+.anime-info-sidebar {
+  width: 25%;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+}
+
+#anime-banner {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+  
+  .anime-info {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .anime-details-main {
+    width: 70%;
+    float: right;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .carousel-container {
+    margin-top: 40px;
+    overflow: hidden;
+    position: relative;
+  }
+.anime-banner {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.anime-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.anime-content-container {
+    display: flex;
+    padding: 20px;
+}
+
+.anime-main-content {
+    flex: 3;
+    padding-right: 20px;
+}
+
+.anime-description {
+    margin-bottom: 20px;
+}
+
+.anime-cover-image {
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.anime-cover-image img {
+  width: 100%;
+  height: fit-content;
+}
+
+.anime-info-left {
+    flex: 1;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.anime-info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.anime-relations-characters {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+.characters-carousel-container {
+  width: 100%;
+  max-width: 600px; /* Ajuste este valor para caber no espaço desejado */
+  margin: 20px auto; /* Centraliza o carrossel horizontalmente */
+  overflow: hidden;
+  position: relative;
+}
+.characters-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.character-card {
+  width: 120px;
+  height: 200px;
+  text-align: match-parent;
+  flex: 0 0 auto; /* Para manter as imagens no formato carrossel */
+  margin: 0 5px; /* Espaçamento entre as imagens */
+  border: 20px;
+  border-color: #333;
+}
+.character-card img {
+  width: 100%; /* Garante que a imagem ocupe toda a largura do cartão */
+  height: 80%; /* Ajusta a altura para encolher proporcionalmente */
+  object-fit: cover; /* Mantém a proporção da imagem */
+}
+.character-card p {
+  font-size: 10px; /* Reduz o tamanho do texto */
+  margin-top: 5px;
+}
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.432);
+  border: none;
+  color: #78e4de;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+  
+  @media screen and (max-width: 768px) {
+    .anime-content-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .anime-info-left {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .anime-main-content {
+      width: 100%;
+    }
+  
+    .characters-section, .relations-section {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesquisar Animes</title>
+    <title>Buscar Animes</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/search-styles.css">
-    <script src="js/search.js" defer></script>
+    <script type="module" src="js/search.js" defer></script>
 </head>
 <body>
+    <!-- Header reused from index.html -->
     <header>
         <div class="logo">
             <a href="index.html">
@@ -18,80 +18,107 @@
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="search.html">Pesquisar Animes</a></li>
+                <li><a href="search.html">Animes</a></li>
                 <li><a href="#">Temporadas</a></li>
                 <li><a href="#">Social</a></li>
                 <li><a href="#">Fórum</a></li>
             </ul>
         </nav>
+        <div class="search-container">
+            <input type="text" id="anime-name-input" placeholder="Pesquise anime...">
+            <button onclick="searchAnime()">Buscar</button>
+        </div>
     </header>
 
+    <!-- Main content -->
     <main>
-        <section class="search-section">
-            <h2>Pesquisar Animes</h2>
-            <div class="search-bar">
-                <input type="text" id="anime-name-input" placeholder="Digite o nome do anime">
-                <button onclick="searchAnime()">Pesquisar</button>
+        <section id="filters">
+            <div>
+                <label for="genre-select">Gênero:</label>
+                <select id="genre-select">
+                    <option value="">Todos</option>
+                    <option value="Action">Ação</option>
+                    <option value="Adventure">Aventura</option>
+                    <!-- Add more genres as needed -->
+                </select>
             </div>
-
-            <div class="filters">
-                <h3>Filtros</h3>
-                <div class="filter-group">
-                    <label for="genre-select">Gênero:</label>
-                    <select id="genre-select" onchange="applyFilters()">
-                        <option value="">Todos</option>
-                        <option value="action">Ação</option>
-                        <option value="comedy">Comédia</option>
-                        <option value="drama">Drama</option>
-                        <option value="fantasy">Fantasia</option>
-                        <option value="horror">Terror</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="season-select">Temporada:</label>
-                    <select id="season-select" onchange="applyFilters()">
-                        <option value="">Todas</option>
-                        <option value="winter">Inverno</option>
-                        <option value="spring">Primavera</option>
-                        <option value="summer">Verão</option>
-                        <option value="fall">Outono</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="year-select">Ano:</label>
-                    <input type="number" id="year-select" min="1990" max="2024" onchange="applyFilters()">
-                </div>
-
-                <div class="filter-group">
-                    <label for="status-select">Status:</label>
-                    <select id="status-select" onchange="applyFilters()">
-                        <option value="">Todos</option>
-                        <option value="RELEASING">Em Lançamento</option>
-                        <option value="FINISHED">Finalizado</option>
-                        <option value="NOT_YET_RELEASED">Ainda Não Lançado</option>
-                    </select>
-                </div>
+            <div>
+                <label for="season-select">Temporada:</label>
+                <select id="season-select">
+                    <option value="">Todas</option>
+                    <option value="Winter">Inverno</option>
+                    <option value="Spring">Primavera</option>
+                    <!-- Add more seasons if needed -->
+                </select>
             </div>
+            <div>
+                <label for="year-select">Ano:</label>
+                <input type="number" id="year-select" min="1900" max="2024" placeholder="Ano">
+            </div>
+            <div>
+                <label for="status-select">Status:</label>
+                <select id="status-select">
+                    <option value="">Todos</option>
+                    <option value="RELEASING">Em lançamento</option>
+                    <option value="FINISHED">Finalizado</option>
+                    <!-- Add more statuses as needed -->
+                </select>
+            </div>
+            <button onclick="applyFilters(1)">Aplicar Filtros</button>
         </section>
-        <section class="anime-results">
-            <h2>Resultados da Pesquisa</h2>
-            <div id="anime-results-container">
-                <!-- Os resultados da pesquisa serão inseridos aqui -->
-            </div>
-            <div id="pagination-container">
-                <!-- A barra de paginação será inserida aqui -->
-            </div>
-        </section>
-        
 
-        <section class="anime-results">
-            <h2>Resultados da Pesquisa</h2>
-            <div id="anime-results-container">
-                <!-- Os resultados da pesquisa serão inseridos aqui -->
-            </div>
+        <section id="anime-results-container">
+            <!-- Results will be populated here by JavaScript -->
         </section>
+
+        <div id="pagination-container"></div>
     </main>
+
+    <!-- Footer reused from index.html -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#top">
+                    <img src="img/patrik2.png" alt="rebirth logo" />
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rebirth Anime. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
+
+
+<script>// Adicione este script na `search.html` dentro de uma tag <script> ou em um arquivo JS separado.
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+    
+        if (query) {
+            document.getElementById('search-input').value = query; // Atualiza o campo de input com o termo de pesquisa
+            // Chamar função para buscar os animes com base no termo de pesquisa
+            performSearch(query);
+        }
+    });
+    
+    function performSearch(query) {
+        // Implemente a lógica de pesquisa para buscar animes com base no `query`
+        // Isso pode incluir uma chamada à API do Anilist para buscar animes correspondentes ao termo
+        console.log("Buscando animes para:", query);
+    }
+</script>
