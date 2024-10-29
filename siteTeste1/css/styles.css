@@ -89,7 +89,7 @@ header nav ul li a {
     flex-shrink: 0;  
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/*
+  /*
 .anime-card {
     background-color: #333333;
     border-radius: 10px;
@@ -363,3 +363,27 @@ footer {
     margin: 20px;
 }
 
+
+
+/*   Login e Registro      */
+
+
+.login-button a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #66d3ee;
+    transition: background-color 0.3s;
+}
+
+.login-button a:hover {
+    background-color: #55b3cc;
+}
+
+.login-button i {
+    margin-right: 5px;
+}
