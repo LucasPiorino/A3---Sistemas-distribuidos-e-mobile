@@ -1,0 +1,90 @@
+/* LOGIN */
+.login-section {
+    max-width: 400px;
+    background-color: #1f1f1f; 
+    color: #ffffff; 
+    padding: 20px; 
+    border-radius: 3px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin: 200px auto; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+h2 {
+    font-size: 32px; 
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+label {
+    display: block;
+    margin-bottom: 5px; 
+    width: 100%; 
+}
+
+input {
+    width: 100%; 
+    max-width: 320px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    margin-bottom: 15px; 
+}
+
+input:focus {
+    border-color: #66d3ee; 
+    outline: none; 
+}
+
+.submit-button {
+    max-width: 320px; 
+    padding: 10px; 
+    background-color: #2a96b1; 
+    border: none; 
+    border-radius: 4px; 
+    color: white; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
+    width: 100%; 
+    margin-top: 10px; 
+}
+
+button:hover {
+    background-color: #66d3ee; 
+}
+
+.forgot-password {
+    font-size: 14px;
+    display: block; 
+    text-align: center;
+    margin-top: 10px; 
+    color: #66d3eec6; 
+    text-decoration: none; 
+}
+
+
+.create-account {
+    display: block; 
+    text-align: center;
+    margin-top: 10px; 
+    color: #ffffff; 
+}
+
+.create-account a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #66d3eec6;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

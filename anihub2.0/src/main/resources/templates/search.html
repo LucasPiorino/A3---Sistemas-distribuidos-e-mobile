@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Animes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/search.js" defer></script>
+    <script src="js/autocomplete.js" defer></script>
+</head>
+<body>
+    <!-- Header reused from / -->
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="img/patrik2.png" alt="rebirth">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="search">Animes</a></li>
+                <li><a href="#">Temporadas</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="home-search-input" placeholder="Pesquise anime...">
+            <div id="autocomplete-suggestions" class="suggestions-box"></div>
+        </div>
+
+        <div class="login-button">
+            <a href="login" title="Login ou Registrar">
+                <i class="fas fa-user"></i> <!-- Ícone de usuário do Font Awesome -->
+                <span>Entrar</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mt-4">
+        <section id="filters" class="row g-3">
+            <!-- GENERO -->
+            <div class="col-md-3">
+                <label for="genre-select" class="form-label">Gênero:</label>
+                <select id="genre-select" class="form-select">
+                </select>
+            </div>
+            <!-- TEMPORADA -->
+            <div class="col-md-3">
+                <label for="season-select" class="form-label">Temporada:</label>
+                <select id="season-select" class="form-select">
+                    <option value="">Todas</option>
+                    <option value="Winter">Inverno</option>
+                    <option value="Spring">Primavera</option>
+                    <option value="Autumn">Outono</option>
+                    <option value="Summer">Verão</option>
+                </select>
+            </div>
+            <!-- ANO -->
+            <div class="col-md-3">
+                <label for="year-select" class="form-label">Ano:</label>
+                <input type="number" id="year-select" min="1900" max="2024" class="form-control" placeholder="Ano">
+            </div>
+            <!-- Filter group for Status -->
+            <div class="col-md-3">
+                <label for="status-select" class="form-label">Status:</label>
+                <select id="status-select" class="form-select">
+                    <option value="">Todos</option>
+                    <option value="RELEASING">Em lançamento</option>
+                    <option value="FINISHED">Finalizado</option>
+                    <!-- More statuses -->
+                </select>
+            </div>
+            <!-- Aplicar -->
+            <div class="col-12 text-end">
+                <button class="btn btn-primary mt-2" onclick="applyFilters(1)">
+                    <i class="fas fa-filter"></i> Aplicar Filtros
+                </button>
+            </div>
+        </section>
+    
+        <section id="anime-results-container" class="row mt-4"></section>
+        <div id="pagination-container" class="mt-4"></div>
+    </main>
+    <!-- Footer -->
+    
+</body>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <a href="#top">
+                <img src="img/patrik2.png" alt="rebirth logo" />
+            </a>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Termos de Serviço</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Rebirth Anime. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+</html>
+
+
+<script>// Adicione este script na `search` dentro de uma tag <script> ou em um arquivo JS separado.
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+    
+        if (query) {
+            document.getElementById('search-input').value = query; // Atualiza o campo de input com o termo de pesquisa
+            // Chamar função para buscar os animes com base no termo de pesquisa
+            performSearch(query);
+        }
+    });
+    
+    function performSearch(query) {
+        // Implemente a lógica de pesquisa para buscar animes com base no `query`
+        // Isso pode incluir uma chamada à API do Anilist para buscar animes correspondentes ao termo
+        console.log("Buscando animes para:", query);
+    }
+</script>
