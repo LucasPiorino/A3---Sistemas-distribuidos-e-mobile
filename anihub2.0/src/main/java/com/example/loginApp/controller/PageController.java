@@ -30,4 +30,9 @@ public class PageController {
     public String animeDetails() {
         return "anime-details.html"; // Renderiza anime-details.html
     }
+    
+    @GetMapping("/favoritos")
+    public String favoritos() {
+        return "favoritos.html"; // Renderiza favoritos.html
+    }
 }
