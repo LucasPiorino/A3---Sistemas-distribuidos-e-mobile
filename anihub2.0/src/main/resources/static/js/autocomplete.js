@@ -89,7 +89,7 @@ function displaySuggestions(animeList) {
             // Adiciona o evento de clique na sugestão
             suggestionItem.addEventListener('mousedown', () => {
                 // Redireciona para a página de detalhes do anime
-                window.location.href = `anime-details.html?id=${anime.id}`;
+                window.location.href = `anime-details?id=${anime.id}`;
             });
 
             suggestionsContainer.appendChild(suggestionItem);
@@ -104,7 +104,7 @@ document.getElementById('home-search-input').addEventListener('keypress', (e) =>
         const searchInput = document.getElementById('home-search-input').value.trim();
         if (searchInput) {
             // Redireciona para search.html com o termo de pesquisa como parâmetro da URL
-            window.location.href = `search.html?query=${encodeURIComponent(searchInput)}`;
+            window.location.href = `search?query=${encodeURIComponent(searchInput)}`;
         }
     }
 });

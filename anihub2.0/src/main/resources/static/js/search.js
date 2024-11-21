@@ -210,6 +210,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function fetchAndPopulateGenres() {
     const genreSelect = document.getElementById('genre-select');
 
+    if (!genreSelect) {
+        console.warn("O elemento 'genre-select' não foi encontrado na página.");
+        return; // Interrompe a execução se o elemento não existir
+    }
+
     const query = `
         query {
             GenreCollection
@@ -231,20 +236,13 @@ async function fetchAndPopulateGenres() {
         }
 
         const data = await response.json();
-
-        // Verifique a resposta completa para garantir que contém todos os gêneros
-        console.log("Resposta completa da API:", data);
-
         if (!data || !data.data || !data.data.GenreCollection) {
             throw new Error("Nenhum gênero encontrado na resposta da API.");
         }
 
         const genres = data.data.GenreCollection;
 
-        // Limpe o seletor antes de adicionar os gêneros
         genreSelect.innerHTML = '<option value="">Todos</option>';
-
-        // Adiciona os gêneros ao <select>
         genres.forEach(genre => {
             const option = document.createElement('option');
             option.value = genre;

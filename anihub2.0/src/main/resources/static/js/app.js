@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         section.innerHTML = animes.map(anime => `
-            <div class="anime-card" onclick="window.location.href='anime-details.html?id=${anime.id}';">
+            <div class="anime-card" onclick="window.location.href='anime-details?id=${anime.id}';">
                 <img src="${anime.coverImage.large}" alt="${anime.title.romaji}">
                 <div class="anime-info">
                     <h3>${anime.title.romaji}</h3>
