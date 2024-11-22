@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="anime-info">
                         <h3>${anime.title.romaji}</h3>
                     </div>
-                    <a href="anime-details?id=${animeId}">Ver Detalhes</a>
+                    <a href="anime-details.html?id=${animeId}">Ver Detalhes</a>
                 `;
                 favoritesList.appendChild(animeItem);
             } catch (error) {
