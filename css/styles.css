@@ -52,7 +52,7 @@ header nav ul li a {
     margin-right: 10px; 
 }
 
-/* Ajustando a largura do input de pesquisa para telas menores */
+/* input de pesquisa para telas menores */
 #home-search-input {
     width: 300px;
     padding: 8px;
