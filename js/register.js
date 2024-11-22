@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(result => {
             if (result.success) {
                 alert("Registrado com sucesso!");
-                window.location.href = "/"; // Redireciona para a página principal
+                window.location.href = "index.html"; // Redireciona para a página principal
             } else {
                 alert("Erro ao registrar: " + result.message);
             }

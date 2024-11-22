@@ -60,7 +60,7 @@ function loginUser(data) {
     .then(result => {
         if (result.success) {
             alert("Login realizado com sucesso!");
-            window.location.href = "/"; // Redireciona para a página principal
+            window.location.href = "index.html"; // Redireciona para a página principal
         } else {
             alert("Erro ao fazer login: " + result.message);
         }
