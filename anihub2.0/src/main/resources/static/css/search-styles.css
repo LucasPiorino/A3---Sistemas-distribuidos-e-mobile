@@ -136,7 +136,7 @@ body {
 
 
 .pagination button {
-    background-color: #FF4500;
+    background-color: #007bff;
     color: #FFFFFF;
     border: none;
     padding: 10px;
@@ -146,12 +146,12 @@ body {
 }
 
 .pagination button.active {
-    background-color: #FF6347;
+    background-color: #0056b3;
     cursor: default;
 }
 
 .pagination button:hover:not(.active) {
-    background-color: #FF6347;
+    background-color: #0056b3;
 }
 
 .pagination span {
@@ -273,78 +273,59 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Responsividade melhorada */
-@media (max-width: 1024px) {
-    .search-bar {
-        flex-direction: column;
-    }
-
-    .search-bar input[type="text"] {
-        width: 100%;
-    }
-
-    .search-bar button {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .filters {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .filter-group {
-        flex: 1 1 100%;
-    }
-
-    .anime-results h2 {
-        font-size: 20px;
-    }
-
-    .anime-card {
-        width: calc(50% - 10px); /* Ajusta para duas colunas */
-        height: auto; /* Ajusta altura automaticamente */
-    }
-
-    .anime-card img {
-        height: auto; /* Ajusta altura automaticamente */
-    }
-}
 
 @media (max-width: 768px) {
-    .anime-card {
-        width: 100%; /* Uma coluna em telas menores */
+    #filters {
+        gap: 15px;
     }
 
-    .anime-card img {
-        height: 150px; /* Redimensiona imagem */
-    }
-
-    .anime-info h3 {
-        font-size: 14px;
-    }
-
-    .anime-info p {
-        font-size: 12px;
+    #filters > div {
+        flex: 100%;
     }
 
     button {
         font-size: 14px;
     }
-}
 
-@media (max-width: 480px) {
-    header nav ul {
+    #anime-results-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+
+    .anime-card {
+        width: 100%; 
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: space-between; 
+        height: 275px; /* Altura fixa para o card */
     }
 
-    .anime-card img {
-        height: 120px;
-    }
-
-    .anime-info {
+    .anime-card > div {
+        width: 100%; 
+        height: 50%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         padding: 10px;
+        justify-content: space-between; 
+    }
+
+    .anime-card > img {
+        width: 100%; 
+        height: 180px; 
+        object-fit: cover; 
+    }
+
+    .anime-card > div > .name {
+        width: 100%; 
+        padding-top: 10px;
+        font-size: 14px;
+        text-align: center;
+        white-space: normal; 
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .anime-info h3 {
@@ -352,6 +333,10 @@ button:hover {
     }
 
     .anime-info p {
-        font-size: 10px;
+        font-size: 7px;
+    }
+
+    .anime-info {
+        height: 100px;
     }
 }
