@@ -27,6 +27,10 @@ async function fetchAnimeDetails(id) {
                             status
                             season
                             startDate { year month day }
+                            averageScore
+                            rankings { rank context }
+                            externalLinks { url site }
+                            trailer { id site }
                             characters { nodes { name { full } image { large } } }
                             studios { nodes { name } }
                         }
@@ -66,6 +70,36 @@ function renderAnimeDetails(anime) {
             <p>${character.name.full}</p>
         </div>
     `).join('');
+
+    // Renderizar o ranking
+    const rankingElement = document.getElementById("anime-ranking");
+    if (anime.rankings.length > 0) {
+        rankingElement.innerHTML = `
+            <strong>Ranking:</strong> ${anime.rankings[0].rank} (${anime.rankings[0].context})
+        `;
+    }
+
+    // Renderizar links externos
+    const linksContainer = document.getElementById("anime-external-links");
+    if (anime.externalLinks.length > 0) {
+        linksContainer.innerHTML = anime.externalLinks
+            .map(link => `<a href="${link.url}" target="_blank">${link.site}</a>`)
+            .join('');
+    }
+
+    // Renderizar trailer
+    const trailerContainer = document.getElementById("anime-trailer");
+    if (anime.trailer) {
+        const trailerUrl = anime.trailer.site === "youtube"
+            ? `https://www.youtube.com/embed/${anime.trailer.id}`
+            : anime.trailer.site === "dailymotion"
+                ? `https://www.dailymotion.com/embed/video/${anime.trailer.id}`
+                : null;
+
+        if (trailerUrl) {
+            trailerContainer.innerHTML = `<iframe src="${trailerUrl}" allowfullscreen></iframe>`;
+        }
+    }
 }
 
 function initializeCharacterCarousel() {
