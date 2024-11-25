@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Animes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/search-styles.css">
     <script type="module" src="js/search.js" defer></script>
     <script src="js/autocomplete.js" defer></script>
-    <script src="js/auth.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header reused from / -->
     <header>
         <div class="logo">
             <a href="/">
@@ -23,8 +21,8 @@
             <ul>
                 <li><a href="/">Início</a></li>
                 <li><a href="search">Animes</a></li>
-                <li><a href="#">Temporadas</a></li>
-            </ul>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="favoritos.">Favoritos</a></li>
         </nav>
         <div class="search-container">
             <input type="text" id="home-search-input" placeholder="Pesquise anime...">
@@ -39,85 +37,79 @@
         </div>
     </header>
 
-    <main class="container mt-4">
-        <section id="filters" class="row g-3">
-            <!-- GENERO -->
-            <div class="col-md-3">
-                <label for="genre-select" class="form-label">Gênero:</label>
-                <select id="genre-select" class="form-select">
+    <!-- Main content -->
+    <main>
+        <section id="filters">
+            <div>
+                <label for="genre-select">Gênero:</label>
+                <select id="genre-select">
+                    <option value="">Todos</option>
+                    <option value="Action">Ação</option>
+                    <option value="Adventure">Aventura</option>
+                    <option value="Romance">Romance</option>
                 </select>
             </div>
-            <!-- TEMPORADA -->
-            <div class="col-md-3">
-                <label for="season-select" class="form-label">Temporada:</label>
-                <select id="season-select" class="form-select">
+            <div>
+                <label for="season-select">Temporada:</label>
+                <select id="season-select">
                     <option value="">Todas</option>
                     <option value="Winter">Inverno</option>
                     <option value="Spring">Primavera</option>
-                    <option value="Autumn">Outono</option>
-                    <option value="Summer">Verão</option>
+                    <option value="Fall">Outono</option>
                 </select>
             </div>
-            <!-- ANO -->
-            <div class="col-md-3">
-                <label for="year-select" class="form-label">Ano:</label>
-                <input type="number" id="year-select" min="1900" max="2024" class="form-control" placeholder="Ano">
+            <div>
+                <label for="year-select">Ano:</label>
+                <input type="number" id="year-select" min="1900" max="2024" placeholder="Ano">
             </div>
-            <!-- Filter group for Status -->
-            <div class="col-md-3">
-                <label for="status-select" class="form-label">Status:</label>
-                <select id="status-select" class="form-select">
+            <div>
+                <label for="status-select">Status:</label>
+                <select id="status-select">
                     <option value="">Todos</option>
                     <option value="RELEASING">Em lançamento</option>
                     <option value="FINISHED">Finalizado</option>
-                    <!-- More statuses -->
                 </select>
             </div>
-            <!-- Aplicar -->
-            <div class="col-12 text-end">
-                <button class="btn btn-primary mt-2" onclick="applyFilters(1)">
-                    <i class="fas fa-filter"></i> Aplicar Filtros
-                </button>
-            </div>
+            <button onclick="applyFilters(1)">Aplicar Filtros</button>
         </section>
-    
-        <section id="anime-results-container" class="row mt-4"></section>
-        <div id="pagination-container" class="mt-4"></div>
+
+        <section id="anime-results-container">
+            <!-- Results  -->
+        </section>
+
+        <div id="pagination-container"></div>
     </main>
-    <!-- Footer -->
-    
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#top">
+                    <img src="img/patrik2.png" alt="rebirth logo" />
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rebirth Anime. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
-
-<footer>
-    <div class="footer-content">
-        <div class="footer-logo">
-            <a href="#top">
-                <img src="img/patrik2.png" alt="rebirth logo" />
-            </a>
-        </div>
-        <div class="footer-links">
-            <ul>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Termos de Serviço</a></li>
-                <li><a href="#">Política de Privacidade</a></li>
-            </ul>
-        </div>
-        <div class="footer-social">
-            <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
-            <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 Rebirth Anime. Todos os direitos reservados.</p>
-    </div>
-</footer>
-
 </html>
 
 
-<script>// Adicione este script na `search` dentro de uma tag <script> ou em um arquivo JS separado.
+<script>// Adicione este script na `search.html` dentro de uma tag <script> ou em um arquivo JS separado.
     document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const query = urlParams.get('query');
