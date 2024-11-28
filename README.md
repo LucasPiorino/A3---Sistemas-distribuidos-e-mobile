@@ -1,4 +1,4 @@
-# A3---Sistemas-distribuidos-e-mobile
+# A3
 
 📜 Proposta do Projeto
 O Projeto Rebirth:AniHub,  é uma plataforma voltada para fãs de animes, oferecendo uma experiência completa e dinâmica. O site permite que os usuários:
