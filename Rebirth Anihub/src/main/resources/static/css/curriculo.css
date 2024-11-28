@@ -1,0 +1,127 @@
+.cards-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.curriculo-card {
+    width: 40%;
+    background-color: #2c2c2c;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curriculo-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.curriculo-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.habilidades h4 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #66d3ee;
+}
+
+.progress-bar {
+    position: relative;
+    background-color: #444;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 8px;
+}
+
+.progress {
+    background-color: #66d3ee;
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.nivel {
+    font-size: 0.8em;
+    color: #ccc;
+    margin-top: 5px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.sobre, .idiomas, .experiencia, .educacao {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.sobre h4, .idiomas h4, .experiencia h4, .educacao h4 {
+    margin-bottom: 10px;
+    color: #66d3ee;
+}
+
+.sobre p, .idiomas p, .experiencia p, .educacao p {
+    font-size: 0.9em;
+    line-height: 1.4em;
+    color: #ccc;
+}
+
+.experiencia p strong, .educacao p strong {
+    font-weight: bold;
+    color: white;
+}
+
+.idiomas p {
+    margin: 5px 0;
+}
+
+.curriculo-card {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Sessão Sobre */
+.sobre-site {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.sobre-site h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sobre-site p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Botão Ver Completo */
+.ver-completo-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #66d3ee;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.ver-completo-btn:hover {
+    background-color: #55b3cc;
+}

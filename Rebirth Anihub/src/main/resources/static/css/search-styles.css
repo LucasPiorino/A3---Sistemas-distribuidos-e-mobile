@@ -1,0 +1,342 @@
+/* Estilo principal para a página de pesquisa */
+body {
+    background-color: #1F1F1F;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+
+.search-section {
+    padding: 30px;
+    max-width: 1200px;
+    background-color: #2A2A2A;
+    border-radius: 10px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    background-color: #65e1e6;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-bar button:hover {
+    background-color: #ffffff;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    flex: 1 1 calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.filter-group select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.anime-results {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.anime-results h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#anime-results-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.anime-card {
+    background-color: #333333;
+    border-radius: 10px;
+    overflow: hidden;
+    width: calc(15% - 15px);
+    height: 550px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.anime-card:hover {
+    transform: scale(1.05);
+}
+
+.anime-card img {
+    width: 100%;
+    height: 70%;
+    border-bottom: 2px solid #66d3ee;
+}
+
+.anime-info {
+    padding: 15px;
+}
+
+.anime-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.anime-info p {
+    font-size: 14px;
+    color: #AAAAAA;
+}
+
+/* nUMEROS LA EM BAIXO */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+
+.pagination button {
+    background-color: #007bff;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination button.active {
+    background-color: #0056b3;
+    cursor: default;
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #0056b3;
+}
+
+.pagination span {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+/* Css para os selects */
+
+#genre-select {
+    padding: 8px 12px;         /* Espaçamento interno para aumentar o tamanho do campo */
+    font-size: 14px;           /* Tamanho da fonte */
+    color: #333;               /* Cor do texto */
+    border: 1px solid #ccc;    /* Borda leve e cinza */
+    border-radius: 4px;        /* Bordas arredondadas */
+    background-color: #fff;    /* Fundo branco */
+    width: 100%;               /* Faz o select ocupar toda a largura disponível */
+    box-sizing: border-box;    /* Garante que o padding seja incluído no cálculo da largura */
+    transition: border-color 0.3s ease;  /* Transição suave para a cor da borda */
+}
+
+#season-select {
+    padding: 8px 12px;        
+    font-size: 14px;          
+    color: #333;               
+    border: 1px solid #ccc;   
+    border-radius: 4px;        
+    background-color: #fff;
+    width: 100%;               
+    box-sizing: border-box;    
+    transition: border-color 0.3s ease;  
+}
+
+#year-select {
+    padding: 8px 12px;        
+    font-size: 14px;          
+    color: #333;               
+    border: 1px solid #ccc;   
+    border-radius: 4px;        
+    background-color: #fff;
+    width: 100%;               
+    box-sizing: border-box;    
+    transition: border-color 0.3s ease;  
+}
+
+#status-select {
+    padding: 8px 12px;        
+    font-size: 14px;          
+    color: #333;               
+    border: 1px solid #ccc;   
+    border-radius: 4px;        
+    background-color: #fff;
+    width: 100%;               
+    box-sizing: border-box;    
+    transition: border-color 0.3s ease;  
+}
+
+
+/* Estilo para o botão de aplicar filtros */
+button {
+    margin-top: 20px;
+    max-height: 60px;
+    background-color: #66d3ee;           
+    color: white;                     
+    font-size: 16px;                  
+    border: none;                     
+    border-radius: 4px;               
+    cursor: pointer;                  
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    display: inline-block;             
+}
+
+
+/* Estilo básico para o conteúdo */
+main {
+    padding: 20px;
+}
+
+/* Seção de Filtros */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+#filters > div {
+    flex: 1 1 200px; /* Flexível com tamanho mínimo de 200px */
+    min-width: 180px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+select, input[type="number"], button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    #filters {
+        gap: 15px;
+    }
+
+    #filters > div {
+        flex: 100%;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    #anime-results-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+
+    .anime-card {
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between; 
+        height: 275px; /* Altura fixa para o card */
+    }
+
+    .anime-card > div {
+        width: 100%; 
+        height: 50%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        justify-content: space-between; 
+    }
+
+    .anime-card > img {
+        width: 100%; 
+        height: 180px; 
+        object-fit: cover; 
+    }
+
+    .anime-card > div > .name {
+        width: 100%; 
+        padding-top: 10px;
+        font-size: 14px;
+        text-align: center;
+        white-space: normal; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .anime-info h3 {
+        font-size: 12px;
+    }
+
+    .anime-info p {
+        font-size: 7px;
+    }
+
+    .anime-info {
+        height: 100px;
+    }
+}

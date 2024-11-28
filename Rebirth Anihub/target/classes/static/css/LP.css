@@ -1,0 +1,147 @@
+/* Fundo do Currículo */
+#curriculo {
+    background-color: #181818; /* Ajuste da cor do fundo para diferenciá-lo */
+    padding: 50px 20px;
+    color: #fff;
+    min-height: calc(100vh - 150px); /* Garantir preenchimento da tela */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.curriculo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Títulos e Estilo Geral */
+.curriculo-title {
+    font-size: 2.5rem;
+    color: #66d3ee;
+    margin-bottom: 20px;
+    animation: slideDown 1s ease;
+}
+
+.curriculo-intro {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    animation: slideLeft 1s ease;
+}
+
+.curriculo-section h2 {
+    color: #66d3ee;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: left;
+    animation: slideRight 1s ease;
+}
+
+.curriculo-section ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+/* Seções do Currículo */
+.curriculo-section ul li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Transições de Elementos */
+.curriculo-section ul li:hover {
+    background-color: #333;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.curriculo-section ul li h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.curriculo-section ul li p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Foto */
+.curriculo-photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.curriculo-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #66d3ee;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curriculo-photo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(102, 211, 238, 0.7);
+}
+
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

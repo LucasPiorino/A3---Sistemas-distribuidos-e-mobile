@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Registrar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/autocomplete.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="img/patrik2.png" alt="rebirth">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="search">Animes</a></li>
+                <li><a href="curriculo">Sobre</a></li>
+                <li><a href="favoritos">Favoritos</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="home-search-input" placeholder="Pesquise anime...">
+            <div id="autocomplete-suggestions" class="suggestions-box"></div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="Caixas">
+            <div class="register-section">
+                <h1>Registrar</h1>
+                <form id="register-form">
+				    <label for="register-username">Nome de Usuário</label>
+				    <input type="text" id="register-username" name="username" required>
+				
+				    <label for="register-birthdate">Data de Nascimento</label>
+				    <input type="date" id="register-birthdate" name="birthdate" required>
+				
+				    <label for="register-email">Endereço de Email</label>
+				    <input type="email" id="register-email" name="email" required>
+				
+				    <label for="register-password">Criar Senha</label>
+				    <input type="password" id="register-password" name="password" required>
+				
+				    <label for="CPF">CPF</label>
+				    <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="000.000.000-00" required>
+				
+				    <button type="submit" class="submit-button">Registrar</button>
+				</form>
+
+            </div>
+    </section>
+    </main>
+
+    <!-- Footer importado da / -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#top">
+                    <img src="img/patrik2.png" alt="rebirth logo" />
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="curriculo">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rebirth Anime. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/register.js"></script>
+</body>
+</html>

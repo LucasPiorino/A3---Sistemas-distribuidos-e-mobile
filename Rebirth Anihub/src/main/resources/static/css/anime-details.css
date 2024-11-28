@@ -1,0 +1,246 @@
+/* Seção: Anime Info Sidebar */
+.anime-info-sidebar {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-sizing: border-box;
+  float: left;
+  padding: 20px;
+  width: 25%;
+}
+
+/* Seção: Anime Banner */
+#anime-banner {
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.anime-banner {
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.anime-banner img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Seção: Anime Info */
+.anime-info {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Seção: Anime Details Main */
+.anime-details-main {
+  box-sizing: border-box;
+  float: right;
+  padding: 20px;
+  width: 70%;
+}
+
+/* Seção: Carousel */
+.carousel-container {
+  margin-top: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.characters-carousel-container {
+  margin: 20px auto;
+  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.characters-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.character-card {
+  border-color: #333;
+  flex: 0 0 auto;
+  height: 200px;
+  margin: 0 5px;
+  text-align: match-parent;
+  width: 120px;
+}
+
+.character-card img {
+  height: 80%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.character-card p {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+/* Botões do Carousel */
+.carousel-btn {
+  background-color: rgba(255, 255, 255, 0.432);
+  border: none;
+  color: #78e4de;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Seção: Anime Content Container */
+.anime-content-container {
+  display: flex;
+  padding: 20px;
+}
+
+.anime-main-content {
+  flex: 3;
+  padding-right: 20px;
+}
+
+.anime-description {
+  margin-bottom: 20px;
+}
+
+/* Seção: Anime Cover Image */
+.anime-cover-image {
+  border-radius: 10px;
+  margin: 20px 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.anime-cover-image img {
+  height: 380px;
+  height: auto;
+  width: 100%;
+}
+
+/* Seção: Anime Info Left */
+.anime-info-left {
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  flex: 0 1 300px;
+  padding: 10px;
+}
+
+.anime-info-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Seção: Anime Relations and Characters */
+.anime-relations-characters {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* Seção: Botões de Favorito */
+.favorite-btn {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  gap: 8px;
+  padding: 4px 8px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.favorite-btn.add-to-favorites {
+  background-color: #78e4de;
+  border: 1px solid #87CEEB;
+  color: #333;
+  margin-left: 20px;
+  margin-top: 30px;
+  transition: background-color 0.3s;
+}
+
+.favorite-btn.remove-from-favorites {
+  background-color: #FF6B6B;
+  border: 1px solid #FF4C4C;
+  color: #fff;
+  margin-left: 20px;
+  margin-top: 30px;
+  transition: background-color 0.3s;
+}
+
+/* Seção: Anime Ranking */
+#anime-ranking {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Seção: Anime Trailer */
+#anime-trailer {
+  margin-bottom: 20px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+#anime-trailer iframe {
+  border: none;
+  border-radius: 10px;
+  height: 360px;
+  max-width: 640px;
+  width: 100%;
+}
+
+/* Seção: Anime External Links */
+#anime-external-links {
+  color: #78e4de;
+  margin-top: 20px;
+}
+
+#anime-external-links a {
+  color: #78e4de;
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .anime-content-container {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .anime-info-left {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .anime-main-content {
+    width: 100%;
+  }
+
+  .characters-section,
+  .relations-section {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
