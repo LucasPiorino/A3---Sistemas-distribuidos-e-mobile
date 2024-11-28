@@ -136,7 +136,7 @@ body {
 
 
 .pagination button {
-    background-color: #FF4500;
+    background-color: #007bff;
     color: #FFFFFF;
     border: none;
     padding: 10px;
@@ -146,12 +146,12 @@ body {
 }
 
 .pagination button.active {
-    background-color: #FF6347;
+    background-color: #0056b3;
     cursor: default;
 }
 
 .pagination button:hover:not(.active) {
-    background-color: #FF6347;
+    background-color: #0056b3;
 }
 
 .pagination span {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/anime-details.css"> <!-- CSS específico desta página -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="js/autocomplete.js" defer></script>
     <script src="js/auth.js"></script>
@@ -23,7 +24,8 @@
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="search.html">Animes</a></li>
-                <li><a href="#">Temporadas</a></li>
+                <li><a href="curriculo.html">Sobre</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
             </ul>
         </nav>
         <div class="search-container">
@@ -61,7 +63,9 @@
                 <div class="anime-main-content">
                     <div class="anime-description">
                         <h1></h1>
+                        <div id="anime-ranking"></div>
                         <p></p>
+                        <div id="anime-trailer"></div>
                         <div class="characters-carousel-container">
                             <div class="characters-carousel">
                                 <!-- Os personagens serão adicionados dinamicamente aqui -->
@@ -78,17 +82,36 @@
                     <ul class="anime-info-list">
                         <!-- Os elementos existentes -->
                     </ul>
-                </div>
-            </div>
-            <div class="anime-relations-characters">
-                <div class="relations-section">
-                    <h2>Relacionados</h2>
-                    <!-- Conteúdo relacionado ao anime, como sequências, OVAs, etc -->
+                    <div id="anime-external-links"></div>
                 </div>
             </div>
         </div>
     </main>
-
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#top">
+                    <img src="img/patrik2.png" alt="rebirth logo" />
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="curriculo.html">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rebirth Anime. Todos os direitos reservados.</p>
+        </div>
+    </footer>
     <script src="js/anime-details.js"></script>
 </body>
 

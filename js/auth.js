@@ -14,7 +14,7 @@ function checkLoginStatus() {
             // Redireciona se o usuário estiver logado e estiver nas páginas de login ou registro
             const path = window.location.pathname;
             if (data.isLoggedIn && (path.includes("login") || path.includes("register"))) {
-                window.location.href = "/";
+                window.location.href = "index.html";
             }
         });
 }
@@ -30,7 +30,7 @@ function updateHeaderForLoggedInUser() {
 function updateHeaderForLoggedOutUser() {
     const loginButton = document.querySelector(".login-button");
     loginButton.classList.remove("logout-button"); // Remove a classe de estilo para o estado de login
-    loginButton.innerHTML = '<a href="login"><i class="fas fa-user"></i> Entrar</a>';
+    loginButton.innerHTML = '<a href="login.html"><i class="fas fa-user"></i> Entrar</a>';
     loginButton.removeEventListener("click", handleLogout);
 }
 

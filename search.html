@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header reused from index.html -->
     <header>
         <div class="logo">
-            <a href="index.html">
+            <a href="/">
                 <img src="img/patrik2.png" alt="rebirth">
             </a>
         </div>
@@ -22,7 +21,7 @@
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="search.html">Animes</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="curriculo.html">Sobre</a></li>
                 <li><a href="favoritos.html">Favoritos</a></li>
         </nav>
         <div class="search-container">
@@ -47,7 +46,7 @@
                     <option value="">Todos</option>
                     <option value="Action">Ação</option>
                     <option value="Adventure">Aventura</option>
-                    <!-- Add more genres as needed -->
+                    <option value="Romance">Romance</option>
                 </select>
             </div>
             <div>
@@ -56,7 +55,7 @@
                     <option value="">Todas</option>
                     <option value="Winter">Inverno</option>
                     <option value="Spring">Primavera</option>
-                    <!-- Add more seasons if needed -->
+                    <option value="Fall">Outono</option>
                 </select>
             </div>
             <div>
@@ -69,20 +68,18 @@
                     <option value="">Todos</option>
                     <option value="RELEASING">Em lançamento</option>
                     <option value="FINISHED">Finalizado</option>
-                    <!-- Add more statuses as needed -->
                 </select>
             </div>
             <button onclick="applyFilters(1)">Aplicar Filtros</button>
         </section>
 
         <section id="anime-results-container">
-            <!-- Results will be populated here by JavaScript -->
+            <!-- Results  -->
         </section>
 
         <div id="pagination-container"></div>
     </main>
 
-    <!-- Footer reused from index.html -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -92,7 +89,7 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="#">Sobre</a></li>
+                    <li><a href="curriculo.html">Sobre</a></li>
                     <li><a href="#">Contato</a></li>
                     <li><a href="#">Termos de Serviço</a></li>
                     <li><a href="#">Política de Privacidade</a></li>
@@ -110,3 +107,23 @@
     </footer>
 </body>
 </html>
+
+
+<script>// Adicione este script na `search.html` dentro de uma tag <script> ou em um arquivo JS separado.
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+    
+        if (query) {
+            document.getElementById('search-input').value = query; // Atualiza o campo de input com o termo de pesquisa
+            // Chamar função para buscar os animes com base no termo de pesquisa
+            performSearch(query);
+        }
+    });
+    
+    function performSearch(query) {
+        // Implemente a lógica de pesquisa para buscar animes com base no `query`
+        // Isso pode incluir uma chamada à API do Anilist para buscar animes correspondentes ao termo
+        console.log("Buscando animes para:", query);
+    }
+</script>
