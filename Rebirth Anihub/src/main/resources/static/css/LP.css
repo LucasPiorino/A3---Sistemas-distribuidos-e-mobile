@@ -1,9 +1,9 @@
 /* Fundo do Currículo */
 #curriculo {
-    background-color: #181818; /* Ajuste da cor do fundo para diferenciá-lo */
+    background-color: #181818; 
     padding: 50px 20px;
     color: #fff;
-    min-height: calc(100vh - 150px); /* Garantir preenchimento da tela */
+    min-height: calc(100vh - 150px); 
     animation: fadeIn 1s ease-in-out;
 }
 

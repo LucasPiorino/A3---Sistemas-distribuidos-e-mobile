@@ -40,10 +40,10 @@ export async function fetchAnimeData() {
 
     const data = await response.json();
 
-    // Adicionando log para inspecionar a resposta da API
+    // log para inspecionar a resposta da API
     console.log("Resposta da API AniList:", data);
 
-    // Verifique se o retorno da API contém os dados esperados
+    
     if (!data || !data.data || !data.data.Page || !data.data.Page.media) {
       throw new Error('Dados da API não encontrados');
     }

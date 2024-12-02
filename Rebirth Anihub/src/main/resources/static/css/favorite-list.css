@@ -5,7 +5,7 @@ h1 {
 #favorites-list {
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
-    gap: 5px; /* Reduz o espaço entre os cards */
+    gap: 5px; 
     padding: 0px;
     justify-content: start;
 }
@@ -58,7 +58,7 @@ h1 {
     font-size: 0x;
 }
 
-/* Ver Detalhes" */
+
 .favorites-list a {
     font-size: 12px;
     color: #ccc;
@@ -78,7 +78,7 @@ h1 {
     color: #fff;
 }
 
-/* Para telas de dispositivos móveis de 768px até 480px (smartphones e tablets menores) */
+
 @media (max-width: 768px) {
     #favorites-list {
         grid-template-columns: repeat(3, 1fr);

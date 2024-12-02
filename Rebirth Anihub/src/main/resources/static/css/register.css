@@ -1,18 +1,18 @@
 body, html {
-    overflow-x: hidden; /* Desabilita o overflow horizontal */
+    overflow-x: hidden; 
 }
 
 .register-section {
     width: 100%;
-    max-width: 350px; /* Limita o container para não esticar muito em telas grandes */
+    max-width: 350px; 
     padding: 15px;
     background-color: #1f1f1f;
     border-radius: 3px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     margin: 90px auto;
-    align-items: center; /* Alinha os elementos filhos ao centro */
-    text-align: center; /* Centraliza o texto */
+    align-items: center; 
+    text-align: center; 
 }
 
 
@@ -62,43 +62,43 @@ button:hover {
 
 @media (max-width: 768px) {
     .register-section {
-        max-width: 90%; /* Reduz a largura máxima para ocupar quase toda a tela */
-        margin: 50px auto; /* Reduz o espaçamento superior */
+        max-width: 90%; 
+        margin: 50px auto; 
     }
 
     .register-section h1 {
-        font-size: 28px; /* Reduz o tamanho do título */
+        font-size: 28px; 
     }
 
     .register-section input {
-        padding: 10px; /* Ajusta o padding dos inputs */
+        padding: 10px; 
     }
 
     .submit-button {
-        padding: 10px; /* Ajusta o padding do botão */
-        font-size: 16px; /* Ajusta o tamanho do texto do botão */
+        padding: 10px; 
+        font-size: 16px; 
     }
 }
 
-/* Media query para celulares (telas menores que 480px) */
+
 @media (max-width: 480px) {
     .register-section {
-        max-width: 95%; /* Usa quase toda a largura da tela */
-        margin: 30px auto; /* Ajusta o espaçamento superior para telas muito pequenas */
+        max-width: 95%; 
+        margin: 30px auto; 
     }
 
     .register-section h1 {
-        font-size: 24px; /* Reduz o tamanho do título ainda mais */
+        font-size: 24px; 
     }
 
     .register-section input {
-        padding: 8px; /* Reduz o padding dos inputs */
-        font-size: 14px; /* Diminui o tamanho do texto dos inputs */
+        padding: 8px; 
+        font-size: 14px; 
     }
 
     .submit-button {
-        padding: 8px; /* Reduz o padding do botão */
-        font-size: 14px; /* Diminui o tamanho do texto do botão */
+        padding: 8px; 
+        font-size: 14px; 
     }
 }
 

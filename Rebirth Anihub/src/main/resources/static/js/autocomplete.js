@@ -1,16 +1,16 @@
-// Show the suggestions box
+
 function showSuggestionsBox() {
     const suggestionsContainer = document.getElementById('autocomplete-suggestions');
     const searchInput = document.getElementById('home-search-input');
     
-    // Position the suggestions box relative to the search input
+    
     const inputRect = searchInput.getBoundingClientRect();
     suggestionsContainer.style.left = `${inputRect.left}px`;
     suggestionsContainer.style.top = `${inputRect.bottom + window.scrollY}px`;
     
     suggestionsContainer.style.display = 'block';
 }
-// Hide the suggestions box
+
 function hideSuggestionsBox() {
     const suggestionsContainer = document.getElementById('autocomplete-suggestions');
     suggestionsContainer.style.display = 'none';
@@ -103,7 +103,7 @@ document.getElementById('home-search-input').addEventListener('keypress', (e) =>
     if (e.key === 'Enter') {
         const searchInput = document.getElementById('home-search-input').value.trim();
         if (searchInput) {
-            // Redireciona para search.html com o termo de pesquisa como parâmetro da URL
+            // Redireciona para search com o termo de pesquisa como parâmetro da URL
             window.location.href = `search?query=${encodeURIComponent(searchInput)}`;
         }
     }

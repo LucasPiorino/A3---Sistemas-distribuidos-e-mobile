@@ -31,13 +31,13 @@
 
         <div class="login-button">
             <a href="login" title="Login ou Registrar">
-                <i class="fas fa-user"></i> <!-- Ícone de usuário do Font Awesome -->
+                <i class="fas fa-user"></i> 
                 <span>Entrar</span>
             </a>
         </div>
     </header>
 
-    <!-- Main content -->
+    
     <main>
         <section id="filters">
             <div>
@@ -74,7 +74,7 @@
         </section>
 
         <section id="anime-results-container">
-            <!-- Results  -->
+            
         </section>
 
         <div id="pagination-container"></div>
@@ -109,21 +109,18 @@
 </html>
 
 
-<script>// Adicione este script na `search.html` dentro de uma tag <script> ou em um arquivo JS separado.
+<script>
     document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const query = urlParams.get('query');
     
         if (query) {
-            document.getElementById('search-input').value = query; // Atualiza o campo de input com o termo de pesquisa
-            // Chamar função para buscar os animes com base no termo de pesquisa
+            document.getElementById('search-input').value = query;
             performSearch(query);
         }
     });
     
     function performSearch(query) {
-        // Implemente a lógica de pesquisa para buscar animes com base no `query`
-        // Isso pode incluir uma chamada à API do Anilist para buscar animes correspondentes ao termo
         console.log("Buscando animes para:", query);
     }
 </script>

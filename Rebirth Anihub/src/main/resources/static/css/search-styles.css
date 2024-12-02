@@ -162,15 +162,15 @@ body {
 /* Css para os selects */
 
 #genre-select {
-    padding: 8px 12px;         /* Espaçamento interno para aumentar o tamanho do campo */
-    font-size: 14px;           /* Tamanho da fonte */
-    color: #333;               /* Cor do texto */
-    border: 1px solid #ccc;    /* Borda leve e cinza */
-    border-radius: 4px;        /* Bordas arredondadas */
-    background-color: #fff;    /* Fundo branco */
-    width: 100%;               /* Faz o select ocupar toda a largura disponível */
-    box-sizing: border-box;    /* Garante que o padding seja incluído no cálculo da largura */
-    transition: border-color 0.3s ease;  /* Transição suave para a cor da borda */
+    padding: 8px 12px;         
+    font-size: 14px;           
+    color: #333;               
+    border: 1px solid #ccc;    
+    border-radius: 4px;        
+    background-color: #fff;    
+    width: 100%;               
+    box-sizing: border-box;    
+    transition: border-color 0.3s ease;  
 }
 
 #season-select {
@@ -210,7 +210,7 @@ body {
 }
 
 
-/* Estilo para o botão de aplicar filtros */
+/* filtros */
 button {
     margin-top: 20px;
     max-height: 60px;
@@ -225,7 +225,6 @@ button {
 }
 
 
-/* Estilo básico para o conteúdo */
 main {
     padding: 20px;
 }
@@ -240,7 +239,7 @@ main {
 }
 
 #filters > div {
-    flex: 1 1 200px; /* Flexível com tamanho mínimo de 200px */
+    flex: 1 1 200px; 
     min-width: 180px;
 }
 
@@ -298,7 +297,7 @@ button:hover {
         flex-direction: column;
         align-items: center;
         justify-content: space-between; 
-        height: 275px; /* Altura fixa para o card */
+        height: 275px; 
     }
 
     .anime-card > div {

@@ -52,7 +52,7 @@ header nav ul li a {
     margin-right: 10px; 
 }
 
-/* Ajustando a largura do input de pesquisa para telas menores */
+
 #home-search-input {
     width: 300px;
     padding: 8px;
@@ -93,7 +93,7 @@ header nav ul li a {
 }
 
 .carousel::-webkit-scrollbar {
-    display: none; /* Hides scrollbar on Chrome, Safari, and other WebKit browsers */
+    display: none; 
 }
   
 .anime-card {
@@ -131,12 +131,12 @@ header nav ul li a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100px; /* Define uma altura mínima para o texto */
+    height: 100px; 
     word-break: break-all;
 }
 
 .anime-info h3 {
-    font-size: 12px; /* Reduz o tamanho da fonte para caber em telas menores */
+    font-size: 12px; 
     color: #fff;
     margin: 5px 0;
     overflow: hidden;
@@ -144,7 +144,7 @@ header nav ul li a {
 }
 
 .anime-info p {
-    font-size: 10px; /* Reduz o tamanho da fonte */
+    font-size: 10px; 
     color: #ccc;
 }
 
@@ -166,14 +166,14 @@ header nav ul li a {
 }
 
 .carousel-arrow.left {
-    left: 10px; /* Adjust positioning if needed */
+    left: 10px; 
 }
 
 .carousel-arrow.right {
-    right: 10px; /* Adjust positioning if needed */
+    right: 10px; 
 }
 
-/* Media queries para dispositivos móveis */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -198,7 +198,7 @@ header nav ul li a {
 
     #home-search-input {
         width: 100%;
-        max-width: 90%; /* Limita a largura máxima em telas menores */
+        max-width: 90%; 
     }
 
     .carousel-container {
@@ -206,12 +206,12 @@ header nav ul li a {
     }
 
      .anime-card {
-         transition: none; /* Remove transições para telas pequenas */
+         transition: none; 
     }
     
      .anime-card:hover {
-            transform: none; /* Remove o efeito de escala */
-            box-shadow: none; /* Remove a sombra */
+            transform: none; 
+            box-shadow: none; 
         }
     
     .anime-card img {
@@ -344,7 +344,7 @@ footer {
     }
 }
 
-/* Additional styles for search filters */
+/* filters */
 #filters {
     display: flex;
     gap: 15px;

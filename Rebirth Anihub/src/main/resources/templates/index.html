@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site de Animes</title>
+    <title>AnimeHub</title>
     <link rel="stylesheet" href="css/styles.css">
     <script type="module" src="js/app.js" defer></script>
     <script src="js/autocomplete.js" defer></script>
@@ -33,7 +33,7 @@
 
             <div class="login-button">
                 <a href="login" title="Login ou Registrar">
-                    <i class="fas fa-user"></i> <!-- Ícone de usuário do Font Awesome -->
+                    <i class="fas fa-user"></i> 
                     <span>Entrar</span>
                 </a>
             </div>
@@ -132,10 +132,10 @@
         const searchInput = document.getElementById('home-search-input').value.trim();
         if (searchInput) {
             // Redirecionar para search.html com o termo de pesquisa como query string
-            window.location.href = `search.html?query=${encodeURIComponent(searchInput)}`;
+            window.location.href = `search?query=${encodeURIComponent(searchInput)}`;
         } else {
             // Caso não haja termo de pesquisa, redirecionar para a página de pesquisa vazia
-            window.location.href = `search.html`;
+            window.location.href = `search`;
         }
     }
     
