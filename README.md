@@ -25,8 +25,10 @@ APIs Externas
 Anilist: Para obter informações sobre animes em lançamento.
 
 👥 Integrantes do Grupo
-Lucas Henrique de Oliveira Piorino
-Murilo Marcondes
+
+Lucas Henrique de Oliveira Piorino RA: 12522214036
+
+Murilo Marcondes RA: 12523113906
 
 
 🚀 Funcionalidades Principais
@@ -41,3 +43,11 @@ Java 21 ou superior.
 Spring Boot
 Maven
 MySQL configurado com o banco de dados do projeto.
+
+Links
+Página estatica:
+https://lucaspiorino.github.io/A3-2024-2/
+Apresentação projeto:
+https://youtu.be/aG5pu_jWNdk
+Power Point:
+https://www.canva.com/design/DAGX_bZoFFQ/thypW7PF0L8x3ZI5WqD4Vg/view?utm_content=DAGX_bZoFFQ&utm_campaign=designshare&utm_medium=link&utm_source=editor
