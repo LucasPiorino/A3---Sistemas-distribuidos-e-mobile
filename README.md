@@ -51,3 +51,7 @@ Apresentação projeto:
 https://youtu.be/aG5pu_jWNdk
 Power Point:
 https://www.canva.com/design/DAGX_bZoFFQ/thypW7PF0L8x3ZI5WqD4Vg/view?utm_content=DAGX_bZoFFQ&utm_campaign=designshare&utm_medium=link&utm_source=editor
+Figma:
+https://www.figma.com/design/1Fp1P0A5LJ2le1lUYrIbXg/Untitled?m=auto&t=0WqwOvK1AVzc1Asv-1
+Trello:
+https://trello.com/b/Td5Qw8eZ/a3-sistemas-distribuidos
