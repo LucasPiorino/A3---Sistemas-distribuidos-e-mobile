@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <title>Buscar Animes</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/search-styles.css">
@@ -13,7 +14,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/">
+            <a href="index.html">
                 <img src="img/patrik2.png" alt="rebirth">
             </a>
         </div>
@@ -31,7 +32,7 @@
 
         <div class="login-button">
             <a href="login.html" title="Login ou Registrar">
-                <i class="fas fa-user"></i> <!-- Ícone de usuário do Font Awesome -->
+                <i class="fas fa-user"></i> 
                 <span>Entrar</span>
             </a>
         </div>
@@ -109,7 +110,7 @@
 </html>
 
 
-<script>// Adicione este script na `search.html` dentro de uma tag <script> ou em um arquivo JS separado.
+<script>
     document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const query = urlParams.get('query');
