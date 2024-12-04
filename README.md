@@ -6,7 +6,7 @@ O Projeto Rebirth:AnimeHub,  é uma plataforma voltada para fãs de animes, ofer
 Visualizem informações sobre animes em lançamento, com destaque para os episódios do dia.
 Marquem seus animes favoritos e tenham acesso rápido a eles em carrosséis personalizados.
 Utilizem um sistema de login e registro seguro, garantindo uma experiência personalizada.
-Além disso, o AniHub utiliza APIs externas para manter os dados atualizados e relevantes, como a programação semanal de lançamentos e os detalhes dos animes.
+Além disso, o AnimeHub utiliza APIs externas para manter os dados atualizados e relevantes, como a programação semanal de lançamentos e os detalhes dos animes.
 
 💻 Tecnologias Utilizadas
 O projeto foi desenvolvido com as seguintes tecnologias e ferramentas:
