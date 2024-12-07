@@ -26,9 +26,9 @@ Anilist: Para obter informações sobre animes em lançamento.
 
 👥 Integrantes do Grupo
 
-Lucas Henrique de Oliveira Piorino RA: 12522214036
+Lucas Henrique de Oliveira Piorino RA: 12522214036 (Sistemas distribuídos e mobile/Usabilidade, desenvolvimento web, mobile e jogos)
 
-Murilo Marcondes RA: 12523113906
+Murilo Marcondes RA: 12523113906 (Sistemas distribuídos e mobile)
 
 
 🚀 Funcionalidades Principais
